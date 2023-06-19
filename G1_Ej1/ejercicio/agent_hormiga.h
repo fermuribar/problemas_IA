@@ -14,6 +14,9 @@ class Agent
 public:
 	Agent(){
 	    FEROMONA_=false;
+		accion_anterior = actFORWARD;
+		sin_salida = false;
+		//mapa = vector<vector<int>>(20,vector<int>(20,0));
 	}
 
 	enum ActionType
@@ -28,7 +31,9 @@ public:
 	ActionType Think();
 
 private:
-	bool FEROMONA_;
+	bool FEROMONA_, sin_salida;
+	ActionType accion_anterior;
+	//vector<vector<int>> mapa;
 };
 
 string ActionStr(Agent::ActionType);
